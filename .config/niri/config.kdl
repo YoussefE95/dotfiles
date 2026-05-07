@@ -22,11 +22,26 @@ output "eDP-1" {
     position x=0 y=0
 }
 
+output "DP-4" {
+    mode "3840x1600@59.994"
+    scale 1
+}
 
 output "HDMI-A-1" {
     mode "1920x1080@60.000"
     scale 1
     position x=0 y=-1080
+}
+
+blur {
+    passes 3
+    offset 3
+    noise 0.02
+    saturation 1.5
+}
+
+overview {
+    backdrop-color "#32302f"
 }
 
 layout {
@@ -45,15 +60,15 @@ layout {
     focus-ring {
         off
         width 5
-        inactive-color "#292c3c"
-        active-gradient from="#ef9f76" to="#e5c890" angle=45
+        inactive-color "#32302f"
+        active-gradient from="#e78a4e" to="#d8a657" angle=45
     }
 
     border {
         width 4
         active-color "#ffc87f"
-        inactive-color "#292c3c"
-        urgent-color "#e78284"
+        inactive-color "#32302f"
+        urgent-color "#ea6962"
     }
 
     shadow {
@@ -66,7 +81,7 @@ layout {
 }
 
 cursor {
-    xcursor-theme "Capitaine-Cursors-White"
+    xcursor-theme "Capitaine-Cursors-Gruvbox-White"
     xcursor-size 24
 }
 
@@ -75,7 +90,8 @@ hotkey-overlay {
 }
 
 spawn-at-startup "qs"
-spawn-at-startup "swww-daemon"
+spawn-at-startup "awww-daemon"
+//spawn-at-startup "sh" "$HOME/.config/startup/start.sh"
 
 environment {
     QT_QPA_PLATFORM "wayland"
@@ -134,6 +150,17 @@ window-rule {
     }
 }
 
+window-rule {
+    match app-id=".*"
+    exclude app-id="firefox"
+
+    opacity 0.92
+
+    background-effect {
+        blur true
+    }
+}
+
 gestures {
     hot-corners {
         off
@@ -148,6 +175,7 @@ binds {
     Mod+P { spawn "kitty" "--title" "kitty_float" "-o" "font_size=20" "theme-setter"; }
     Mod+W { spawn "firefox"; }
     Mod+E { spawn "dolphin"; }
+    Mod+O { spawn "obsidian"; }
     Mod+Space { spawn "qs" "ipc" "call" "popupLoader" "loadLauncher"; }
     Mod+Escape { spawn "hyprlock"; }
 
