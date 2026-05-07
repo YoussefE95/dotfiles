@@ -91,7 +91,6 @@ hotkey-overlay {
 
 spawn-at-startup "qs"
 spawn-at-startup "awww-daemon"
-//spawn-at-startup "sh" "$HOME/.config/startup/start.sh"
 
 environment {
     QT_QPA_PLATFORM "wayland"

@@ -65,5 +65,6 @@ printf '%s' "$output" > "${dest_dir}/${dest_file}"
 theme="${palette[11]}-${palette[12]}-${palette[13]}"
 
 gsettings set org.gnome.desktop.interface gtk-theme "$theme" 
+gsettings set org.gnome.desktop.interface color-scheme "prefer-${palette[12]}"
 gsettings set org.gnome.desktop.interface icon-theme "${palette[14]}"
-gsettings set org.gnome.desktop.interface font-name 'JetBrains Mono SemiBold'
+gsettings set org.gnome.desktop.interface font-name "JetBrains Mono SemiBold"
