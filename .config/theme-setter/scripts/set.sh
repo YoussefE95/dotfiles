@@ -40,13 +40,14 @@ palette=(
 )
 
 {
+    $setters/plasma.sh ${palette[@]} $icons $cursors &
     $setters/wallpaper.sh &
     $setters/gtk.sh ${palette[@]} $theme $mode $tone $icons &
     $setters/gwenview.sh ${palette[@]} &
     $setters/hypr.sh ${palette[@]} $cursors &
     $setters/kitty.sh ${palette[@]} &
-    $setters/kvantum-svg.sh ${palette[@]} &
-    $setters/kvantum-theme.sh ${palette[@]} &
+    # $setters/kvantum-svg.sh ${palette[@]} &
+    # $setters/kvantum-theme.sh ${palette[@]} &
     $setters/niri.sh ${palette[@]} $cursors &
     $setters/nvim.sh $theme $mode $tone &
     $setters/obsidian.sh ${palette[@]} &

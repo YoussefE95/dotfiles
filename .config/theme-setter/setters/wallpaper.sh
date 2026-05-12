@@ -34,7 +34,7 @@ magick "$wallpapers/$theme/$new_wallpaper" \
     -colorize 10% \
     "$local_path/wallpaper.jpg"
 
-swww img "$local_path/wallpaper.jpg" \
+awww img "$local_path/wallpaper.jpg" \
     --transition-type wipe \
     --transition-angle 30 \
     --transition-step 90

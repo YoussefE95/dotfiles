@@ -1,13 +1,32 @@
-output "DP-3" {
+output "DP-1" {
     mode "2560x1440@144.000"
     scale 1
     position x=0 y=0
+    variable-refresh-rate
 }
 
 output "DP-2" {
     mode "2560x1440@144.000"
     scale 1
     position x=-2560 y=0
+}
+
+output "HDMI-A-1" {
+    off
+    mode "1920x1080@120.000"
+    scale 1
+    position x=2560 y=0
+}
+
+blur {
+    passes 3
+    offset 3
+    noise 0.02
+    saturation 1.5
+}
+
+overview {
+    backdrop-color "303446"
 }
 
 layout {
@@ -51,17 +70,13 @@ cursor {
     xcursor-size 24
 }
 
-spawn-at-startup "qs"
-spawn-at-startup "swww-daemon"
-
-environment {
-    QT_QPA_PLATFORM "wayland"
-    QT_QPA_PLATFORMTHEME "qt6ct"
-    QT_AUTO_SCREEN_SCALE_FACTOR "1"
-    QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
-    QT_STYLE_OVERRIDE "kvantum"
-    XDG_MENU_PREFIX "arch-"
+hotkey-overlay {
+    skip-at-startup
 }
+
+spawn-at-startup "qs"
+spawn-at-startup "awww-daemon"
+spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 
 prefer-no-csd
 
@@ -73,8 +88,10 @@ window-rule {
 }
 
 window-rule {
+    match app-id="org.cachyos.hello"
     match app-id="hyprland-share-picker"
     match app-id=".*pavucontrol.*"
+    match app-id=".*steam.*"
     match title=".*olphin.*"
     match title=".*kitty_float.*"
     open-floating true
@@ -109,6 +126,32 @@ window-rule {
     default-window-height {
         fixed 650;
     }
+}
+
+// window-rule {
+//     match app-id=".*"
+//     exclude app-id="firefox"
+//
+//     opacity 0.92
+//
+//     background-effect {
+//         blur true
+//     }
+// }
+
+window-rule {
+    match title="Steam"
+    default-floating-position x=538 y=177
+}
+
+window-rule {
+    match title="Friends List"
+    default-floating-position x=2061 y=222
+}
+
+window-rule {
+    match app-id="steam_app.*"
+    variable-refresh-rate true
 }
 
 gestures {

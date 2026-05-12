@@ -91,15 +91,7 @@ hotkey-overlay {
 
 spawn-at-startup "qs"
 spawn-at-startup "awww-daemon"
-
-environment {
-    QT_QPA_PLATFORM "wayland"
-    QT_QPA_PLATFORMTHEME "qt6ct"
-    QT_AUTO_SCREEN_SCALE_FACTOR "1"
-    QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
-    QT_STYLE_OVERRIDE "kvantum"
-    XDG_MENU_PREFIX "arch-"
-}
+spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 
 prefer-no-csd
 
