@@ -45,6 +45,10 @@ awww img ~/.local/share/wallpaper.jpg \
     --transition-angle 30 \
     --transition-step 90
 
+# Set KDE theme
+lookandfeeltool -a org.kde.breezedark.desktop
+plasma-apply-colorscheme "DynamicTheme"
+
 # Enable systemd services
 sudo systemctl enable bluetooth docker sddm
 
