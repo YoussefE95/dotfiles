@@ -23,5 +23,9 @@ BarWidget {
         function loadLauncher() {
             popupLoader.load()
         }
+
+        function setTheme () {
+            Theme.setTheme()
+        }
     }
 }

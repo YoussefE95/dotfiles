@@ -27,6 +27,10 @@ get_palette() {
     query ".$(get "theme").palette.$(get "mode").$(get "tone").$1" $themes
 }
 
+get_full_palette() {
+    query ".$(get "theme").palette.$(get "mode").$(get "tone")|.[]" $themes
+}
+
 if [ "$1" == "--set" ]; then
     set "theme" $2
     set "mode" $3
@@ -49,4 +53,6 @@ elif [ "$1" == "--cursors" ]; then
     get_cursors
 elif [ "$1" == "--palette" ]; then
     get_palette $2
+elif [ "$1" == "--full-palette" ]; then
+    get_full_palette
 fi

@@ -7,6 +7,8 @@ elif [ "$1" == "--mode" ]; then
     $parser --mode
 elif [ "$1" == "--tone" ]; then
     $parser --tone
-else
-    $parser --palette $1
+elif [ "$1" == "--palette" ]; then
+    $parser --palette $2
+elif [ "$1" == "--full-palette" ]; then
+    $parser --full-palette
 fi
