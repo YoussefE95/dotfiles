@@ -1,0 +1,3 @@
+spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+spawn-at-startup "awww-daemon"
+spawn-at-startup "qs"

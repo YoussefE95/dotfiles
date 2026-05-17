@@ -1,0 +1,17 @@
+blur {
+    passes 3
+    offset 3
+    noise 0.02
+    saturation 1.5
+}
+
+window-rule {
+    match app-id=".*"
+    exclude app-id="firefox"
+
+    opacity 0.92
+
+    background-effect {
+        blur true
+    }
+}

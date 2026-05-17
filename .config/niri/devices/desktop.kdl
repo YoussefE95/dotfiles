@@ -1,0 +1,46 @@
+output "DP-1" {
+    mode "2560x1440@144.000"
+    scale 1
+    position x=0 y=0
+    variable-refresh-rate
+}
+
+output "DP-2" {
+    mode "2560x1440@144.000"
+    scale 1
+    position x=-2560 y=0
+}
+
+output "HDMI-A-1" {
+    off
+    mode "1920x1080@120.000"
+    scale 1
+    position x=2560 y=0
+}
+
+layout {
+    gaps 16
+
+    preset-column-widths {
+        proportion 0.39
+        proportion 0.5
+        proportion 0.61
+    }
+
+    default-column-width { proportion 0.5; }
+}
+
+window-rule {
+    match title="Steam"
+    default-floating-position x=538 y=177
+}
+
+window-rule {
+    match title="Friends List"
+    default-floating-position x=2061 y=222
+}
+
+window-rule {
+    match app-id="steam_app.*"
+    variable-refresh-rate true
+}

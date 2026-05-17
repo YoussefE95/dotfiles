@@ -1,165 +1,3 @@
-output "DP-1" {
-    mode "2560x1440@144.000"
-    scale 1
-    position x=0 y=0
-    variable-refresh-rate
-}
-
-output "DP-2" {
-    mode "2560x1440@144.000"
-    scale 1
-    position x=-2560 y=0
-}
-
-output "HDMI-A-1" {
-    off
-    mode "1920x1080@120.000"
-    scale 1
-    position x=2560 y=0
-}
-
-blur {
-    passes 3
-    offset 3
-    noise 0.02
-    saturation 1.5
-}
-
-overview {
-    backdrop-color "303446"
-}
-
-layout {
-    gaps 16
-
-    center-focused-column "never"
-
-    preset-column-widths {
-        proportion 0.39
-        proportion 0.5
-        proportion 0.61
-    }
-
-    default-column-width { proportion 0.5; }
-
-    focus-ring {
-        off
-        width 5
-        inactive-color "#292c3c"
-        active-gradient from="#ef9f76" to="#e5c890" angle=45
-    }
-
-    border {
-        width 4
-        active-color "#ffc87f"
-        inactive-color "#292c3c"
-        urgent-color "#e78284"
-    }
-
-    shadow {
-        on
-        softness 30
-        spread 5
-        offset x=0 y=5
-        color "#0007"
-    }
-}
-
-cursor {
-    xcursor-theme "Capitaine-Cursors-White"
-    xcursor-size 24
-}
-
-hotkey-overlay {
-    skip-at-startup
-}
-
-spawn-at-startup "qs"
-spawn-at-startup "awww-daemon"
-spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
-
-prefer-no-csd
-
-screenshot-path "~/Screenshots/%Y-%m-%d %H-%M-%S.png"
-
-window-rule {
-    geometry-corner-radius 12
-    clip-to-geometry true
-}
-
-window-rule {
-    match app-id="org.cachyos.hello"
-    match app-id="hyprland-share-picker"
-    match app-id=".*pavucontrol.*"
-    match app-id=".*steam.*"
-    match title=".*olphin.*"
-    match title=".*kitty_float.*"
-    open-floating true
-    open-focused true
-}
-
-window-rule {
-    match app-id=".*pavucontrol.*"
-    default-column-width {
-        fixed 840;
-    }
-    default-window-height {
-        fixed 540;
-    }
-}
-
-window-rule {
-    match title=".*olphin.*"
-    default-column-width {
-        fixed 918;
-    }
-    default-window-height {
-        fixed 580;
-    }
-}
-
-window-rule {
-    match title=".*kitty_float.*"
-    default-column-width {
-        fixed 900;
-    }
-    default-window-height {
-        fixed 650;
-    }
-}
-
-// window-rule {
-//     match app-id=".*"
-//     exclude app-id="firefox"
-//
-//     opacity 0.92
-//
-//     background-effect {
-//         blur true
-//     }
-// }
-
-window-rule {
-    match title="Steam"
-    default-floating-position x=538 y=177
-}
-
-window-rule {
-    match title="Friends List"
-    default-floating-position x=2061 y=222
-}
-
-window-rule {
-    match app-id="steam_app.*"
-    variable-refresh-rate true
-}
-
-gestures {
-    hot-corners {
-        off
-    }
-}
-
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
@@ -168,6 +6,7 @@ binds {
     Mod+P { spawn "kitty" "--title" "kitty_float" "-o" "font_size=20" "theme-setter"; }
     Mod+W { spawn "firefox"; }
     Mod+E { spawn "dolphin"; }
+    Mod+O { spawn "obsidian"; }
     Mod+Space { spawn "qs" "ipc" "call" "popupLoader" "loadLauncher"; }
     Mod+Escape { spawn "hyprlock"; }
 
@@ -263,6 +102,7 @@ binds {
     Mod+BracketRight { consume-or-expel-window-right; }
 
     Mod+R { switch-preset-column-width; }
+    Mod+Shift+R { switch-preset-column-width-back; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
 

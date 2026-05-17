@@ -1,0 +1,44 @@
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+
+window-rule {
+    match app-id="org.cachyos.hello"
+    match app-id="hyprland-share-picker"
+    match app-id=".*pavucontrol.*"
+    match title=".*olphin.*"
+    match title=".*kitty_float.*"
+    open-floating true
+    open-focused true
+}
+
+window-rule {
+    match app-id=".*pavucontrol.*"
+    default-column-width {
+        fixed 840;
+    }
+    default-window-height {
+        fixed 540;
+    }
+}
+
+window-rule {
+    match title=".*olphin.*"
+    default-column-width {
+        fixed 918;
+    }
+    default-window-height {
+        fixed 580;
+    }
+}
+
+window-rule {
+    match title=".*kitty_float.*"
+    default-column-width {
+        fixed 900;
+    }
+    default-window-height {
+        fixed 650;
+    }
+}
