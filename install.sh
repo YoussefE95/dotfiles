@@ -36,9 +36,10 @@ sudo chown $USER:$USER \
     /usr/share/sddm/themes/dynamic/Main.qml \
     /usr/share/sddm/themes/dynamic/background.jpg
 
-# Set KDE theme
+# Set Breeze theme and color scheme
 lookandfeeltool -a org.kde.breezedark.desktop
-plasma-apply-colorscheme "DynamicTheme"
+plasma-apply-colorscheme \
+    "$(get-theme --theme)-$(get-theme --mode)-$(get-theme --tone)"
 
 # Enable systemd services
 sudo systemctl enable bluetooth docker sddm
@@ -58,7 +59,7 @@ sudo rm -rf ~/Documents ~/Music ~/Public ~/Videos ~/Templates ~/Pictures
 #     --transition-angle 30 \
 #     --transition-step 90
 
-# Install Spicetify
+# Apply Spicetify
 # spicetify config inject_css 1 replace_colors 1 overwrite_assets 1 \
 #   inject_theme_js 1
 # spicetify config current_theme Comfy

@@ -17,22 +17,23 @@ fi
 new_wallpaper=$($wallpaper_ls | sort -R | tail -1)
 $parser --set-wallpaper "$new_wallpaper"
 
-if [ $mode == "dark" ]; then
-    if [ $tone == "hard" ]; then
-        fill="50%" 
-    else
-        fill="25%"
-    fi
-else
-    fill="15%"
-fi
-
-magick "$wallpapers/$theme/$new_wallpaper" \
-    -fill "#$($parser --palette backgroundAlt)" \
-    -colorize $fill \
-    -fill "#$($parser --palette orange)" \
-    -colorize 10% \
-    "$local_path/wallpaper.jpg"
+# if [ $mode == "dark" ]; then
+#     if [ $tone == "hard" ]; then
+#         fill="50%" 
+#     else
+#         fill="25%"
+#     fi
+# else
+#     fill="15%"
+# fi
+#
+# magick "$wallpapers/$theme/$new_wallpaper" \
+#     -fill "#$($parser --palette backgroundAlt)" \
+#     -colorize $fill \
+#     -fill "#$($parser --palette orange)" \
+#     -colorize 10% \
+#     "$local_path/wallpaper.jpg"
+cp $wallpapers/$theme/$new_wallpaper $local_path/wallpaper.jpg
 
 awww img "$local_path/wallpaper.jpg" \
     --transition-type wipe \

@@ -45,4 +45,4 @@ THEME
 
 printf '%s' "$output" > "${dest_dir}${dest_file}"
 
-kitten themes --cache-age=-1 --reload-in=all Dynamic
+kitten themes --reload-in=all Dynamic

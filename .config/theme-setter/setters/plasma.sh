@@ -1,5 +1,5 @@
 #!/bin/bash
 
-plasma-apply-colorscheme "$1"
-/usr/lib/plasma-changeicons "$2"
-plasma-apply-cursortheme "$3"
+plasma-apply-colorscheme "$1-$2-$3"
+/usr/lib/plasma-changeicons "$4"
+plasma-apply-cursortheme "$5"
