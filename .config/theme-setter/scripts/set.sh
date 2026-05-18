@@ -48,7 +48,7 @@ palette=(
     $setters/nvim.sh $theme $mode $tone &
     $setters/obsidian.sh ${palette[@]} &
     $setters/okular.sh ${palette[@]} &
-    $setters/plasma.sh ${palette[@]} $icons $cursors &
+    $setters/plasma.sh "$theme-$mode-$tone" $icons $cursors &
     $setters/quickshell.sh &
     $setters/sddm.sh ${palette[@]} &
     $setters/spicetify.sh ${palette[@]} &
