@@ -40,6 +40,7 @@ sudo chown $USER:$USER \
 lookandfeeltool -a org.kde.breezedark.desktop
 plasma-apply-colorscheme \
     "$(get-theme --theme)-$(get-theme --mode)-$(get-theme --tone)"
+/usr/lib/plasma-changeicons Newaita-reborn-fedora
 
 # Enable systemd services
 sudo systemctl enable bluetooth docker sddm
