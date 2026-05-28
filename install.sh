@@ -42,6 +42,9 @@ plasma-apply-colorscheme \
     "$(get-theme --theme)-$(get-theme --mode)-$(get-theme --tone)"
 /usr/lib/plasma-changeicons Newaita-reborn-fedora
 
+# Set dark color scheme for GTK
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
 # Enable systemd services
 sudo systemctl enable bluetooth docker sddm
 
