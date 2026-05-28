@@ -1,6 +1,7 @@
 import Quickshell
 import Quickshell.Io
 import QtQuick
+import Quickshell.Wayland
 
 BarWidget {
     width: 32
@@ -17,6 +18,27 @@ BarWidget {
         onClicked: (mouse) => { popupLoader.load() }
     }
 
+    LockContext {
+        id: lockContext
+
+        onUnlocked: {
+            lock.locked = false;
+        }
+    }
+
+    WlSessionLock {
+        id: lock
+
+        locked: false
+
+        WlSessionLockSurface {
+            LockSurface {
+                anchors.fill: parent
+                context: lockContext
+            }
+        }
+    }
+
     IpcHandler {
         target: "popupLoader"
 
@@ -26,6 +48,10 @@ BarWidget {
 
         function setTheme () {
             Theme.setTheme()
+        }
+
+        function lock() {
+            lock.locked = true
         }
     }
 }

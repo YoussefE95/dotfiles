@@ -26,7 +26,7 @@ Scope {
                     verticalCenter: parent.verticalCenter
                     left: parent.left
                 }
-                leftPadding: 6
+                leftPadding: 16
                 spacing: 6
                 LauncherWidget {}
                 //ThemeSetterWidget {}
@@ -43,7 +43,7 @@ Scope {
                     verticalCenter: parent.verticalCenter
                     right: parent.right
                 }
-                rightPadding: 6
+                rightPadding: 16
                 spacing: 6
                 BatteryWidget {}
                 BrightnessWidget {}

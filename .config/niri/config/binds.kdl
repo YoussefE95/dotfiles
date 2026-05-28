@@ -8,7 +8,7 @@ binds {
     Mod+E { spawn "dolphin"; }
     Mod+O { spawn "obsidian"; }
     Mod+Space { spawn "qs" "ipc" "call" "popupLoader" "loadLauncher"; }
-    Mod+Escape { spawn "hyprlock"; }
+    Mod+Escape { spawn "qs" "ipc" "call" "popupLoader" "lock"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "amixer -Mq set Master,0 5%+ unmute"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "amixer -Mq set Master,0 5%- unmute"; }
