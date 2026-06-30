@@ -11,4 +11,6 @@ elif [ "$1" == "--palette" ]; then
     $parser --palette $2
 elif [ "$1" == "--full-palette" ]; then
     $parser --full-palette
+elif [ "$1" == "--supported" ]; then
+    $parser --supported
 fi

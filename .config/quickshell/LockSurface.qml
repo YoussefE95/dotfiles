@@ -8,24 +8,13 @@ Rectangle {
 	required property LockContext context
 	readonly property ColorGroup colors: Window.active ? palette.active : palette.inactive
 
-	color: colors.window
+    color: "transparent"
 
-	Label {
-		id: clock
-
-		anchors {
-			top: parent.top
-		}
-        Text {
-            font {
-                family: Theme.fontFamily
-                weight: Theme.fontWeight
-                pointSize: 64
-            }
-            color: Theme.foreground
-            text: `${DateTime.date}\n${DateTime.time}`
-        }
-	}
+    Image {
+        anchors.fill: parent
+        source: 'lock.jpg'
+        fillMode: Image.PreserveAspectCrop
+    }
 
 	ColumnLayout {
 		// Uncommenting this will make the password entry invisible except on the active monitor.

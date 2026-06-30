@@ -1,2 +1,0 @@
-#!/bin/bash
-python $HOME/.config/theme-setter/theme-setter.py

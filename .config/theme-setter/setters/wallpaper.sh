@@ -40,5 +40,9 @@ awww img "$local_path/wallpaper.jpg" \
     --transition-angle 30 \
     --transition-step 90
 
+magick "$local_path/wallpaper.jpg" -set option:dims "%wx%h" \
+    \( +clone -scale 10% -blur 0x4 -scale "%[dims]" \) \
+    -compose over -composite $HOME/.config/quickshell/lock.jpg
+
 cp "$local_path/wallpaper.jpg" \
     "/usr/share/sddm/themes/dynamic/background.jpg"

@@ -19,12 +19,12 @@ LazyLoader {
 
         PopupInfo {
             id: info
-            infoWidth: 300
-            infoHeight: 110
+            infoWidth: 263
+            infoHeight: 96
             borderColor: Theme.backgroundAlt
             Row {
                 anchors.centerIn: parent
-                spacing: 10
+                spacing: 8
                 PowerMenuButton {
                     icon: "󰍃"
                     command: "sh -c ~/.config/quickshell/scripts/quit.sh"

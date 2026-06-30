@@ -6,6 +6,7 @@ input {
     }
 
     touchpad {
+        dwt
         tap
     }
 
@@ -16,15 +17,22 @@ input {
     }
 }
 
-output "eDP-1" {
-    mode "1920x1080@60.049"
+output "DSI-1" {
+    mode "1200x1920@50.002"
     scale 1
     position x=0 y=0
 }
 
-output "DP-4" {
-    mode "3840x1600@59.994"
+output "DP-1" {
+    mode "1920x1080@60.000"
     scale 1
+    position x=0 y=-1080
+}
+
+output "DP-2" {
+    mode "1920x1080@60.000"
+    scale 1
+    position x=0 y=-1080
 }
 
 output "HDMI-A-1" {

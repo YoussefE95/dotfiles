@@ -31,6 +31,20 @@ get_full_palette() {
     query ".$(get "theme").palette.$(get "mode").$(get "tone")|.[]" $themes
 }
 
+get_supported() {
+for theme in $(jq -r "keys[]" $themes)
+do
+    for mode in $(jq -r ".${theme}.palette" $themes | jq -r "keys[]")
+    do
+        for tone in $(jq -r ".${theme}.palette.${mode}" $themes | jq -r "keys[]")
+        do
+            echo "$theme $mode $tone"
+        done
+    done
+done
+echo "Current: $(get 'theme') $(get 'mode') $(get 'tone')"
+}
+
 if [ "$1" == "--set" ]; then
     set "theme" $2
     set "mode" $3
@@ -55,4 +69,6 @@ elif [ "$1" == "--palette" ]; then
     get_palette $2
 elif [ "$1" == "--full-palette" ]; then
     get_full_palette
+elif [ "$1" == "--supported" ]; then
+    get_supported
 fi

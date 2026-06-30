@@ -3,10 +3,10 @@ binds {
 
     Mod+T { spawn "kitty"; }
     Mod+Shift+T { spawn "kitty" "--title" "kitty_float"; }
-    Mod+P { spawn "kitty" "--title" "kitty_float" "-o" "font_size=20" "theme-setter"; }
     Mod+W { spawn "firefox"; }
     Mod+E { spawn "dolphin"; }
     Mod+O { spawn "obsidian"; }
+    Mod+P { spawn "qs" "ipc" "call" "ThemeSetter" "toggle"; }
     Mod+Space { spawn "qs" "ipc" "call" "popupLoader" "loadLauncher"; }
     Mod+Escape { spawn "qs" "ipc" "call" "popupLoader" "lock"; }
 

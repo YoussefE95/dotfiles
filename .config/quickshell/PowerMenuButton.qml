@@ -7,8 +7,8 @@ Rectangle {
     property string icon
     property string command
 
-    width: 84
-    height: 84
+    width: 74
+    height: 74
     radius: 10
     color: Theme.backgroundAlt
 

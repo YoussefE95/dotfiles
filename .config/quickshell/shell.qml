@@ -5,4 +5,5 @@ Scope {
     Bar {}
     NotificationPopup {}
     ReloadPopup {}
+    ThemeSetter {}
 }
