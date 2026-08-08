@@ -45,6 +45,9 @@ plasma-apply-colorscheme \
 # Set dark color scheme for GTK
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
+# Enable DMS
+systemctl --user enable --now dms
+
 # Enable systemd services
 sudo systemctl enable bluetooth docker sddm
 
@@ -56,12 +59,6 @@ chsh -s $(which zsh)
 
 # Delete unnecessary folders
 sudo rm -rf ~/Documents ~/Music ~/Public ~/Videos ~/Templates ~/Pictures
-
-# Set wallpaper
-# awww img ~/.local/share/wallpaper.jpg \
-#     --transition-type wipe \
-#     --transition-angle 30 \
-#     --transition-step 90
 
 # Apply Spicetify
 # spicetify config inject_css 1 replace_colors 1 overwrite_assets 1 \
