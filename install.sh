@@ -1,15 +1,15 @@
 #!/bin/bash
 # Update and install packages
 paru -Syu && paru -S \
-    sddm hyprland hyprlock hyprshot niri awww quickshell-git kitty starship \
+    plasma-login-manager dms-shell niri kitty starship \
     neovim ranger nvtop htop obsidian dropbox discord obs-studio \
     spotify-launcher spicetify-cli dolphin dolphin-plugins okular gwenview \
-    ttf-jetbrains-mono ttf-jetbrains-mono-nerd brightnessctl jq python-pipx \
+    ttf-jetbrains-mono ttf-jetbrains-mono-nerd jq python-pipx \
     python-pillow docker docker-buildx ripgrep wl-clipboard gnome-keyring \
     xdg-desktop-portal-gnome xdg-desktop-portal-kde polkit-kde-agent \
     systemsettings qt5-wayland qt6-wayland qt6ct zsh zsh-autosuggestions \
     zsh-history-substring-search zsh-syntax-highlighting libappindicator-gtk3 \
-    archlinux-xdg-menu xwayland-satellite playerctl pavucontrol-qt
+    archlinux-xdg-menu xwayland-satellite playerctl
 
 # Copy config files
 sudo rsync -a .config .local .zshrc ~/

@@ -30,16 +30,17 @@ cursors=$($parser --cursors)
 palette=$($parser --full-palette)
 
 {
-    $setters/wallpaper.sh &
+    # $setters/wallpaper.sh 
+    $setters/dms.sh ${palette[@]} $theme &
     $setters/gtk.sh $theme $mode $tone $icons &
-    $setters/hypr.sh ${palette[@]} $cursors &
+    # $setters/hypr.sh ${palette[@]} $cursors &
     $setters/kitty.sh ${palette[@]} &
     $setters/niri.sh ${palette[@]} $cursors &
     $setters/nvim.sh $theme $mode $tone &
     $setters/obsidian.sh ${palette[@]} &
     $setters/okular.sh ${palette[@]} &
     $setters/plasma.sh $theme $mode $tone $icons $cursors &
-    $setters/quickshell.sh &
-    $setters/sddm.sh ${palette[@]} &
+     $setters/quickshell.sh &
+    # $setters/sddm.sh ${palette[@]} &
     $setters/spicetify.sh ${palette[@]} &
 } &> /dev/null

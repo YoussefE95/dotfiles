@@ -1,0 +1,20 @@
+{
+    "name": "Dynamic Theme",
+    "primary": "#ef9f76",
+    "primaryText": "#303446",
+    "primaryContainer": "#ca9ee6",
+    "secondary": "#a6d189",
+    "surface": "#303446",
+    "surfaceText": "#c6d0f5",
+    "surfaceVariant": "#737994",
+    "surfaceVariantText": "#c6d0f5",
+    "surfaceTint": "#ca9ee6",
+    "background": "#303446",
+    "backgroundText": "#c6d0f5",
+    "outline": "#737994",
+    "surfaceContainer": "#303446",
+    "surfaceContainerHigh": "#292c3c",
+    "error": "#e78284",
+    "warning": "#e5c890",
+    "info": "#a6d189"
+}

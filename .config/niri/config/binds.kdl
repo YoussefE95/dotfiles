@@ -2,13 +2,14 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+T { spawn "kitty"; }
-    Mod+Shift+T { spawn "kitty" "--title" "kitty_float"; }
     Mod+W { spawn "firefox"; }
     Mod+E { spawn "dolphin"; }
     Mod+O { spawn "obsidian"; }
-    Mod+P { spawn "qs" "ipc" "call" "ThemeSetter" "toggle"; }
-    Mod+Space { spawn "qs" "ipc" "call" "popupLoader" "loadLauncher"; }
-    Mod+Escape { spawn "qs" "ipc" "call" "popupLoader" "lock"; }
+    Mod+B { spawn "dms" "ipc" "call" "bar" "toggleAutoHide" "index" "0"; }
+    Mod+N { spawn "dms" "ipc" "call" "notifications" "toggle"; }
+    Mod+Space { spawn "dms" "ipc" "call" "launcher" "toggle"; }
+    Mod+Escape { spawn "dms" "ipc" "call" "lock" "lock"; }
+    Mod+Delete { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "amixer -Mq set Master,0 5%+ unmute"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "amixer -Mq set Master,0 5%- unmute"; }
@@ -121,7 +122,4 @@ binds {
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
-    Mod+Delete allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
-
-    Ctrl+Alt+Delete { quit; }
 }
